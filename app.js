@@ -3,61 +3,26 @@ function encryptText(userText) {
   userText = decodeURIComponent(encodeURIComponent(userText));
   var newString = "",
     char,
-    nextChar,
-    combinedCharCode;
+    nextChar;
   for (var i = 0; i < userText.length; i += 2) {
-    char = userText.charCodeAt(i);
-
+    char = userText.charCodeAt(i).toString(16);
     if (i + 1 < userText.length) {
-      nextChar = userText.charCodeAt(i + 1) - 31;
-
-      combinedCharCode =
-        char +
-        "" +
-        nextChar.toLocaleString("es", {
-          minimumIntegerDigits: 2,
-        });
-
-      newString += String.fromCharCode(parseInt(combinedCharCode, 10));
+      nextChar = userText.charCodeAt(i + 1).toString(16);
+      newString += char + nextChar;
     } else {
-      newString += userText.charAt(i);
+      newString += char;
     }
   }
-  return newString
-    .split("")
-    .reduce(
-      (hex, c) => (hex += c.charCodeAt(0).toString(16).padStart(4, "0")),
-      ""
-    );
+  return newString;
 }
 
 // Función para desencriptar el texto
 function decryptText(userText) {
-    console.log(userText)
   var newString = "",
-    char,
-    codeStr,
-    firstCharCode,
-    lastCharCode;
-  userText = userText
-    .match(/.{1,4}/g)
-    .reduce((acc, char) => acc + String.fromCharCode(parseInt(char, 16)), "");
-  for (var i = 0; i < userText.length; i++) {
-    char = userText.charCodeAt(i);
-    if (char > 132) {
-      codeStr = char.toString(10);
-
-      firstCharCode = parseInt(codeStr.substring(0, codeStr.length - 2), 10);
-
-      lastCharCode =
-        parseInt(codeStr.substring(codeStr.length - 2, codeStr.length), 10) +
-        31;
-
-      newString +=
-        String.fromCharCode(firstCharCode) + String.fromCharCode(lastCharCode);
-    } else {
-      newString += userText.charAt(i);
-    }
+    charCode;
+  for (var i = 0; i < userText.length; i += 2) {
+    charCode = parseInt(userText.substring(i, i + 2), 16);
+    newString += String.fromCharCode(charCode);
   }
   return newString;
 }
@@ -71,4 +36,3 @@ function encriptar(typeAction) {
     document.getElementById("userText").value = decryptText(userText);
   }
 }
-
