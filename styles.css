@@ -1,0 +1,114 @@
+body {
+  font-family: "Libre Baskerville", "serif", "Gill Sans MT", Calibri,
+    "Trebuchet MS", sans-serif;
+  color: #333;
+  font: 1, 2rem;
+  line-height: 1, 3em;
+  margin: 0;
+  background-color: #726eff;
+}
+
+.titulo {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #726eff;
+  text-align: center;
+  margin: 20px 0;
+}
+
+h1 {
+  font-size: xx-large;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.box1 form {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+}
+
+.titulo2 {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.titulo2 h2 {
+  font-size: x-large;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.box1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#726eff, #5effe7, #08c6ab, #37465b, #212b38);
+}
+
+.box1 label {
+  text-align: center;
+  display: block;
+  margin: 10px 0;
+}
+
+.box1 textarea {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  border: 5px solid #726eff;
+  border-radius: 3%;
+  box-shadow: 0 0 30px 10px #212b38;
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 100%;
+  height: 40em;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.buttons button {
+  font-family: "Anton", sans-serif;
+  margin: 10px;
+  padding: 10px;
+  width: 100px;
+  background-color: #08c6ab;
+  color: #212b38;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.buttons button:hover {
+  background-color: #37465b;
+  color: #5effe7;
+  transition: 1s all;
+}
+
+footer {
+  background: #212b38;
+  text-align: center;
+  padding: 40px;
+}
+
+.Copyright {
+  color: white;
+  font-size: 13px;
+  margin: 20px;
+}
+
+@media screen and (max-width: 480px) {
+    .box1 textarea {
+        margin: 10px auto;
+        padding: 10px;
+        width: 80%;
+        height: 30em;
+      }
+}
