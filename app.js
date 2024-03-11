@@ -57,8 +57,7 @@ function isEncrypted(textInput) {
   return hexRegex.test(textInput);
 }
 
-// replace "userText" with the actual id of your input field
-
+// Evento para validar el texto y el campo 
 userTextInput.addEventListener("input", function() {
   let inputText = document.getElementById("userText").value;
 
