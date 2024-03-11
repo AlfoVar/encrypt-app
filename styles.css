@@ -92,6 +92,13 @@ h1 {
   transition: 1s all;
 }
 
+.buttons button:disabled,
+.buttons button[disabled] {
+  background-color: #37465b;
+  color: #5effe7;
+  transition: 1s all;
+}
+
 footer {
   background: #212b38;
   text-align: center;
@@ -105,10 +112,10 @@ footer {
 }
 
 @media screen and (max-width: 480px) {
-    .box1 textarea {
-        margin: 10px auto;
-        padding: 10px;
-        width: 80%;
-        height: 30em;
-      }
+  .box1 textarea {
+    margin: 10px auto;
+    padding: 10px;
+    width: 80%;
+    height: 30em;
+  }
 }
